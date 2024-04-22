@@ -23,7 +23,7 @@ for THTL = 0:0.001:1
     %plot(i,TGEAR,'b*',i,TGEAR_IN,'ro');
     %hold on
 
-    if (abs(TGEAR - TGEAR_IN) < 0.01) && (TGEAR ~= 0) && (THTL ~=0)
+    if (abs(TGEAR - TGEAR_IN) < 0.5) && (TGEAR ~= 0) && (THTL ~=0)
         THTL_OUT = THTL;
         sol = 1;
         break
