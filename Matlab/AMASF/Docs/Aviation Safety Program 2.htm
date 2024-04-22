@@ -1,0 +1,596 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0038)http://avsp.larc.nasa.gov/program.html -->
+<HTML><HEAD><TITLE>Aviation Safety Program</TITLE><!-- #BeginTemplate "/Templates/template_program.dwt" --><!-- DW6 --><!-- #BeginEditable "doctitle" --><!-- #EndEditable -->
+<META lang=en http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<SCRIPT language=JScript>
+<!--
+// DDMenu
+
+  var eOpenMenu = null;
+  function OpenMenu(eSrc,eMenu){
+    eMenu.style.left = eSrc.parentElement.offsetLeft + divMenuBar.offsetLeft;
+    eMenu.style.top = divMenuBar.offsetHeight + divMenuBar.offsetTop;
+    eMenu.style.visibility = "visible";
+    eOpenMenu = eMenu;
+  }
+
+  function CloseMenu(eMenu){
+    eMenu.style.visibility = "hidden";
+    eOpenMenu = null;
+  }
+
+  function MenuBar_over(){
+    var eSrc = window.event.srcElement;
+    if ("A" == eSrc.tagName.toUpperCase()){
+      var eMenu = document.all[eSrc.parentElement.id.replace("tdMenuBarItem","divMenu")];
+      if (eOpenMenu && eOpenMenu != eMenu){
+        CloseMenu(eOpenMenu);}
+      if (eMenu){
+		  OpenMenu(eSrc,eMenu);}
+    }
+  }
+
+  function MenuBar_out(){
+    var eTo = window.event.toElement;
+    if (eOpenMenu && eTo && !eOpenMenu.contains(eTo) && "tblMenuBar" != eTo.id){
+      CloseMenu(eOpenMenu)}
+	}
+
+  function Menu_out(){
+    var eSrc = window.event.toElement;
+    if (eOpenMenu && !eOpenMenu.contains(eSrc) && !divMenuBar.contains(eSrc)){
+      CloseMenu(eOpenMenu)}
+	}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</SCRIPT>
+
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 100%; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+DIV#divMenuBar {
+	BACKGROUND-COLOR: #003399
+}
+TABLE#tblMenuBar TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 90%; PADDING-BOTTOM: 0px; CURSOR: default; COLOR: #ffffff; PADDING-TOP: 0px
+}
+TABLE#tblMenuBar TD.clsMenuBarItem {
+	FONT-WEIGHT: bold; CURSOR: default
+}
+TABLE#tblMenuBar TD.clsMenuBarItem A {
+	FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none
+}
+TABLE#tblMenuBar TD.clsMenuBarItem A:hover {
+	COLOR: #ffff00
+}
+DIV.clsMenu {
+	PADDING-RIGHT: 5px; BORDER-TOP: white 1px solid; PADDING-LEFT: 8px; FONT-SIZE: 90%; VISIBILITY: hidden; PADDING-BOTTOM: 5px; WIDTH: 130px; PADDING-TOP: 5px; POSITION: absolute; BACKGROUND-COLOR: #003399
+}
+DIV.clsMenu A {
+	FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none
+}
+DIV.clsMenu A:hover {
+	COLOR: #ffff00
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2800.1480" name=GENERATOR></HEAD>
+<BODY leftMargin=0 topMargin=0 
+onload="MM_preloadImages('images/New_Nav/Home_2.jpg','images/New_Nav/Img-Doc_2.jpg','images/New_Nav/Links_2.jpg','images/New_Nav/About_Av_2.jpg','images/New_Nav2/VST_2.jpg','images/New_Nav2/SST_2.jpg','images/New_Nav2/WST_2.jpg','images/New_Nav2/SVD_2.jpg','images/New_Nav2/ASVM_2.jpg','images/New_Nav/Whats_New_2.jpg','images/New_Nav/Pro_Org_3.jpg','images/New_Nav2/SASIF_2.jpg')"><A 
+name=top></A><SPAN style="DISPLAY: none"><A 
+href="http://avsp.larc.nasa.gov/program.html#start">Skip Navigation 
+Bar</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width=800 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV align=center><IMG height=84 
+      src="Aviation Safety Program 2_files/AvSSP_web_header2-LG.jpg" 
+      width=800></DIV></TD></TR>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width=800 align=center bgColor=#003f86 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD height=50><A 
+            onmouseover="MM_nbGroup('over','Home_1','images/New_Nav/Home_2.jpg','',1)" 
+            onclick="MM_nbGroup('down','group1','Home_1','',1)" 
+            onmouseout="MM_nbGroup('out')" 
+            href="http://avsp.larc.nasa.gov/index.html" target=_top><IMG 
+            height=42 alt="" src="Aviation Safety Program 2_files/Home_1.jpg" 
+            onload="" border=0 name=Home_1></A></TD>
+          <TD><A 
+            onmouseover="MM_nbGroup('over','About_Av_1','images/New_Nav/About_Av_2.jpg','',1)" 
+            onclick="MM_nbGroup('down','group1','About_Av_1','',1)" 
+            onmouseout="MM_nbGroup('out')" 
+            href="http://avsp.larc.nasa.gov/about.html" target=_top><IMG alt="" 
+            src="Aviation Safety Program 2_files/About_Av_1.jpg" onload="" 
+            border=0 name=About_Av_1></A></TD>
+          <TD><A 
+            onmouseover="MM_nbGroup('over','Whats_New_1','images/New_Nav/Whats_New_2.jpg','',1)" 
+            onclick="MM_nbGroup('down','group1','Whats_New_1','',1)" 
+            onmouseout="MM_nbGroup('out')" 
+            href="http://avsp.larc.nasa.gov/new.html" target=_top><IMG alt="" 
+            src="Aviation Safety Program 2_files/Whats_New_1.jpg" onload="" 
+            border=0 name=Whats_New_1></A></TD>
+          <TD bgColor=#a1a2a2><A 
+            onmouseover="MM_nbGroup('over','Prog_Org_1','images/New_Nav/Pro_Org_3.jpg','',1)" 
+            onclick="MM_nbGroup('down','group1','Prog_Org_1','',1)" 
+            onmouseout="MM_nbGroup('out')" 
+            href="http://avsp.larc.nasa.gov/program.html" target=_top><IMG 
+            alt="" src="Aviation Safety Program 2_files/Pro_Org_3.jpg" onload="" 
+            border=0 name=Prog_Org_1></A></TD>
+          <TD><A 
+            onmouseover="MM_nbGroup('over','ImgDoc_1','images/New_Nav/Img-Doc_2.jpg','',1)" 
+            onclick="MM_nbGroup('down','group1','ImgDoc_1','',1)" 
+            onmouseout="MM_nbGroup('out')" 
+            href="http://avsp.larc.nasa.gov/images.html" target=_top><IMG 
+            height=42 alt="" src="Aviation Safety Program 2_files/Img-Doc_1.jpg" 
+            onload="" border=0 name=ImgDoc_1></A></TD>
+          <TD><A 
+            onmouseover="MM_nbGroup('over','Links_1','images/New_Nav/Links_2.jpg','',1)" 
+            onclick="MM_nbGroup('down','group1','Links_1','',1)" 
+            onmouseout="MM_nbGroup('out')" 
+            href="http://avsp.larc.nasa.gov/links.html" target=_top><IMG 
+            height=42 alt="" src="Aviation Safety Program 2_files/Links_1.jpg" 
+            onload="" border=0 
+  name=Links_1></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE id=nav2 borderColor=#999999 cellSpacing=0 cellPadding=0 width=800 
+align=center bgColor=#999999 border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV align=center><FONT color=#ffffff><STRONG><EM><A 
+      onmouseover="MM_swapImage('Image15','','images/New_Nav2/VST_2.jpg',1)" 
+      onmouseout=MM_swapImgRestore() 
+      href="http://avsp.larc.nasa.gov/program.html#VST"><IMG height=25 
+      src="Aviation Safety Program 2_files/VST_1.jpg" width=133 border=0 
+      name=Image15></A> </EM></STRONG></FONT></DIV></TD>
+    <TD>
+      <DIV align=center><FONT color=#ffffff size=2><STRONG><A 
+      onmouseover="MM_swapImage('Image16','','images/New_Nav2/SST_2.jpg',1)" 
+      onmouseout=MM_swapImgRestore() 
+      href="http://avsp.larc.nasa.gov/program.html#SST"><IMG height=25 
+      src="Aviation Safety Program 2_files/SST_1.jpg" width=133 border=0 
+      name=Image16></A></STRONG></FONT></DIV></TD>
+    <TD>
+      <DIV align=center><FONT color=#ffffff size=2><STRONG><EM><A 
+      onmouseover="MM_swapImage('Image17','','images/New_Nav2/WST_2.jpg',1)" 
+      onmouseout=MM_swapImgRestore() 
+      href="http://avsp.larc.nasa.gov/program.html#WST"><IMG height=25 
+      src="Aviation Safety Program 2_files/WST_1.jpg" width=133 border=0 
+      name=Image17></A> </EM></STRONG></FONT></DIV></TD>
+    <TD>
+      <DIV align=center><FONT color=#ffffff size=2><STRONG><EM><A 
+      onmouseover="MM_swapImage('Image18','','images/New_Nav2/SVD_2.jpg',1)" 
+      onmouseout=MM_swapImgRestore() 
+      href="http://avsp.larc.nasa.gov/program.html#SVD"><IMG height=25 
+      src="Aviation Safety Program 2_files/SVD_1.jpg" width=133 border=0 
+      name=Image18></A> </EM></STRONG></FONT></DIV></TD>
+    <TD>
+      <DIV align=center><FONT color=#ffffff size=2><STRONG><EM><A 
+      onmouseover="MM_swapImage('Image19','','images/New_Nav2/ASVM_2.jpg',1)" 
+      onmouseout=MM_swapImgRestore() 
+      href="http://avsp.larc.nasa.gov/program.html#ASVM"><IMG height=25 
+      src="Aviation Safety Program 2_files/ASVM_1.jpg" width=133 border=0 
+      name=Image19></A> </EM></STRONG></FONT></DIV></TD>
+    <TD><A 
+      onmouseover="MM_swapImage('Image20','','images/New_Nav2/SASIF_2.jpg',1)" 
+      onmouseout=MM_swapImgRestore() 
+      href="http://avsp.larc.nasa.gov/program.html#SASIF"><IMG height=25 
+      alt="SASIF images" src="Aviation Safety Program 2_files/SASIF_1.jpg" 
+      width=133 border=0 name=Image20></A></TD></TR>
+  <TR>
+    <TD vAlign=top bgColor=#a1a2a2>
+      <DIV align=center>
+      <FORM name=jump><SELECT 
+      onchange=location=document.jump.menu.options[document.jump.menu.selectedIndex].value; 
+      name=menu value="GO"> <OPTION value=# selected>Select Element</OPTION> 
+        <OPTION value=../program_saap.html>SAAP</OPTION> <OPTION 
+        value=../program_am.html>AM</OPTION> <OPTION 
+        value=../program_svs.html>SVS</OPTION></SELECT> </FORM></DIV></TD>
+    <TD vAlign=top bgColor=#a1a2a2>
+      <DIV align=center>
+      <FORM name=jump2><SELECT 
+      onchange=location=document.jump2.menu.options[document.jump2.menu.selectedIndex].value; 
+      name=menu value="GO"> <OPTION value=# selected>Select Element</OPTION> 
+        <OPTION value=../program_asmm.html>ASMM</OPTION> <OPTION 
+        value=../program_swap.html>SWAP</OPTION></SELECT> </FORM></DIV></TD>
+    <TD vAlign=top bgColor=#a1a2a2>
+      <DIV align=center>
+      <FORM name=jump3><SELECT 
+      onchange=location=document.jump3.menu.options[document.jump3.menu.selectedIndex].value; 
+      name=menu value="GO"> <OPTION value=# selected>Select Element</OPTION> 
+        <OPTION value=../program_ai.html>AI</OPTION> <OPTION 
+        value=../program_wx.html>WX</OPTION></SELECT> </FORM></DIV></TD>
+    <TD vAlign=top bgColor=#a1a2a2>
+      <DIV align=center>
+      <FORM name=jump4><SELECT 
+      onchange=location=document.jump4.menu.options[document.jump4.menu.selectedIndex].value; 
+      name=menu value="GO"> <OPTION value=# selected>Select Element<OPTION 
+        value=../program_svd_sadst.html>SADST</OPTION> <OPTION 
+        value=../program_svd_sirs.html>SIRS</OPTION> <OPTION 
+        value=../program_svd_kdts.html>KDTS</OPTION> <OPTION 
+        value=../program_svd_socbc.html>SOCBC</OPTION></SELECT> </FORM></DIV></TD>
+    <TD vAlign=top bgColor=#a1a2a2>
+      <DIV align=center>
+      <FORM name=jump5><SELECT 
+      onchange=location=document.jump5.menu.options[document.jump5.menu.selectedIndex].value; 
+      name=menu value="GO"> <OPTION value=# selected>Select Element<OPTION 
+        value=../program_asvm_pafs.html>PAFS</OPTION> <OPTION 
+        value=../program_asvm_fear.html>FEAR</OPTION> <OPTION 
+        value=../program_asvm_eme.html>EME</OPTION> <OPTION 
+        value=../program_asvm_dacs.html>DACS</OPTION> <OPTION 
+        value=../program_asvm_frdtc.html>FRDTC</OPTION> <OPTION 
+        value=../program_asvm_fti.html>FTI</OPTION></SELECT> </FORM></DIV></TD>
+    <TD vAlign=top bgColor=#a1a2a2>
+      <DIV align=center>
+      <FORM name=jump6><SELECT 
+      onchange=location=document.jump6.menu.options[document.jump6.menu.selectedIndex].value; 
+      name=menu value="GO"> <OPTION value=# selected>Select Element<OPTION 
+        value=../program_sasif_sacs.html>SACS<OPTION 
+        value=../program_sasif_sadn.html>SADN</OPTION></SELECT> 
+  </FORM></DIV></TD></TR></TBODY></TABLE>
+<CENTER><A name=start>&nbsp;</A> 
+<TABLE cellSpacing=0 cellPadding=0 width=760 align=center 
+summary="This table is for formatting purposes only." border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=760 height=225><!-- #BeginEditable "text" -->
+      <CENTER>
+      <TABLE height=200 cellSpacing=0 cellPadding=0 width=760 
+      summary="This table is for formatting purposes only." border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=760>
+            <H1 align=center>Program Organization</H1>
+            <H1 align=center><IMG height=540 
+            alt="NASA Aerospace Technology Image" 
+            src="Aviation Safety Program 2_files/AvSSP_Web_Org.jpg" 
+            width=720></H1>
+            <HR>
+            <A name=VST></A></TD></TR>
+        <TR>
+          <TD vAlign=top width=760>
+            <CENTER>
+            <TABLE cellSpacing=5 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD colSpan=2>
+                  <DIV align=center>
+                  <H1>Vehicle Safety Technologies</H1></DIV></TD></TR>
+              <TR>
+                <TD width="52%">
+                  <DIV align=center><IMG 
+                  src="Aviation Safety Program 2_files/VST1.jpg"></DIV></TD>
+                <TD vAlign=bottom width="48%">
+                  <DIV align=center><IMG 
+                  src="Aviation Safety Program 2_files/VST2.jpg"></DIV></TD></TR>
+              <TR>
+                <TD vAlign=top>
+                  <DIV align=center>
+                  <H2>Synthetic Vision</H2>Provides commercial &amp; general 
+                  aviation pilots<BR>with clear-day operations all of the time 
+                  </DIV></TD>
+                <TD vAlign=top>
+                  <DIV align=center>
+                  <H2>Accident Mitigation </H2>
+                  <P>Increases survivability when accidents 
+occur</P></DIV></TD></TR>
+              <TR>
+                <TD>
+                  <DIV align=right>
+                  <P>&nbsp;</P>
+                  <P align=center><IMG height=153 
+                  src="Aviation Safety Program 2_files/VST3.jpg" 
+                  width=288></P></DIV></TD>
+                <TD>
+                  <DIV align=center>
+                  <H2>Single Aircraft Accident Prevention</H2>
+                  <P>Develops health management &amp; robust control 
+                  technologies to enable aircraft that are “self healing” &amp; 
+                  “refuse to crash</P></DIV></TD></TR>
+              <TR>
+                <TD colSpan=2>
+                  <DIV align=center>
+                  <P>&nbsp;</P>
+                  <P><A name=SST></A></P>
+                  <HR>
+
+                  <H1>System Safety Technologies</H1>
+                  <P>&nbsp;</P></DIV></TD></TR>
+              <TR>
+                <TD vAlign=bottom height=170>
+                  <DIV align=right><IMG 
+                  src="Aviation Safety Program 2_files/SST1.jpg"></DIV></TD>
+                <TD vAlign=bottom>
+                  <DIV align=center><IMG 
+                  src="Aviation Safety Program 2_files/SST2.jpg"></DIV></TD></TR>
+              <TR>
+                <TD vAlign=top align=middle>
+                  <DIV align=center>
+                  <H2>Aviation System <BR>Monitoring &amp; Modeling</H2>
+                  <P>Monitors and assesses data from every flight for known 
+                  &amp; unknown issues</P></DIV></TD>
+                <TD vAlign=top align=middle>
+                  <DIV align=center>
+                  <H2>System-Wide Accident Prevention </H2>
+                  <P>Improves human/machine integration in design, operations, 
+                  &amp; maintenance</P></DIV></TD></TR>
+              <TR>
+                <TD colSpan=2>
+                  <DIV align=center>
+                  <P>&nbsp;</P>
+                  <P>&nbsp;</P>
+                  <P>&nbsp;</P><A name=WST></A>
+                  <HR>
+
+                  <H1>Weather Safety Technologies</H1>
+                  <P>&nbsp;</P></DIV></TD></TR>
+              <TR>
+                <TD>
+                  <DIV align=center><IMG 
+                  src="Aviation Safety Program 2_files/WST1.jpg"></DIV></TD>
+                <TD vAlign=bottom align=middle>
+                  <DIV align=center><IMG 
+                  src="Aviation Safety Program 2_files/WST2.jpg"></DIV></TD></TR>
+              <TR>
+                <TD vAlign=top align=middle>
+                  <DIV align=center>
+                  <H2>Weather Accident Prevention</H2>
+                  <P>Brings intelligent weather decision-making to every 
+                  cockpit</P></DIV></TD>
+                <TD vAlign=top align=middle>
+                  <DIV align=center>
+                  <H2>Icing Research</H2>
+                  <P>Icing detection and protection systems, training aids, 
+                  tools for design and certification of aircraft 
+                  systems</P></DIV></TD></TR></TBODY></TABLE></CENTER></TD></TR></TBODY></TABLE>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P><A name=ASVM></A></P>
+      <HR>
+
+      <P><IMG height=540 src="Aviation Safety Program 2_files/ASVM_Overview.jpg" 
+      width=720></P>
+      <P>&nbsp;</P>
+      <P><A name=SVD></A></P>
+      <HR>
+
+      <H1 align=center>SVD</H1>
+      <H3 align=center><EM>(System Vulnerability Detection)</EM></H3>
+      <P>&nbsp;</P>
+      <TABLE cellSpacing=5 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <DIV align=center><IMG height=180 
+            src="Aviation Safety Program 2_files/prg_svd_1.jpg" 
+          width=225></DIV></TD>
+          <TD>
+            <DIV align=center><IMG height=180 
+            src="Aviation Safety Program 2_files/prg_svd_2.jpg" 
+          width=225></DIV></TD>
+          <TD>
+            <DIV align=center><IMG height=180 
+            src="Aviation Safety Program 2_files/prg_svd_3.jpg" 
+          width=225></DIV></TD></TR>
+        <TR>
+          <TD colSpan=3>
+            <DIV align=left>
+            <P>&nbsp;</P>
+            <P>Technologies for SVD will demonstrate and deliver a capability 
+            for data collection, integration, and analysis integration and 
+            leveraging of existing industry activities for enhanced discovery, 
+            identification, and evaluation of tactical and strategic safety 
+            risks in the NAS. In addition, security of airspace operations will 
+            be enhanced by providing ground controllers with an automated 
+            capability to identify an errant aircraft, and establish 
+            architectures for coordination of situational awareness among 
+            appropriate aviation security authorities in the management of 
+            securing the errant aircraft. The SVD Project will leverage existing 
+            technologies to demonstrate and deliver a system to accept and 
+            analyze large amounts of data and provide security interpretations 
+            in real-time to identify emerging trends of concern. Create and 
+            establish a data collection system for confidential, non-punitive 
+            reporting on aviation security through replication of the 
+            methodology, process, and philosophy used in the Aviation Safety 
+            Reporting System (ASRS). In addition, the SVD Project will leverage 
+            existing technologies to demonstrate and deliver a biosensor and a 
+            chemical sensor for use onboard an aircraft. 
+      </P></DIV></TD></TR></TBODY></TABLE>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      <P><A name=SASIF></A></P>
+      <HR>
+
+      <P><IMG height=540 
+      src="Aviation Safety Program 2_files/SASIF_Overview.jpg" width=720></P>
+      <P>&nbsp;</P></CENTER><!-- #EndEditable --></TD></TR>
+  <TR>
+    <TD vAlign=top width=760>
+      <P><BR><A href="http://avsp.larc.nasa.gov/program.html#top">[Back to 
+      Top]</A></P></TD></TR></TBODY></TABLE></CENTER>
+<CENTER><SPAN style="DISPLAY: none"><A 
+href="http://avsp.larc.nasa.gov/program.html#top">Skip Navigational 
+Links</A></SPAN> </CENTER>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width=760 
+summary="This table is for formatting purposes only." border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=760 colSpan=11><BR><IMG height=2 alt=" " 
+      src="Aviation Safety Program 2_files/BAR1.gif" width=754 border=0 
+      name=BAR> </TD></TR>
+  <TR align=middle>
+    <TD vAlign=top width=36>
+      <P><A href="http://avsp.larc.nasa.gov/index.html"><B>Home</B></A></P></TD>
+    <TD vAlign=top width=23>
+      <P>|</P></TD>
+    <TD vAlign=top width=79>
+      <P class=center><A href="http://avsp.larc.nasa.gov/about.html"><B>About 
+      AvSSP</B></A></P></TD>
+    <TD vAlign=top width=23>
+      <P>|</P></TD>
+    <TD vAlign=top width=83>
+      <P class=center><A href="http://avsp.larc.nasa.gov/new.html"><B>What's 
+      New</B></A></P></TD>
+    <TD vAlign=top width=23>
+      <P>|</P></TD>
+    <TD vAlign=top width=149>
+      <TABLE cellSpacing=0 cellPadding=0 width=149 border=0>
+        <TBODY>
+        <TR align=middle>
+          <TD colSpan=3>
+            <P class=center><A 
+            href="http://avsp.larc.nasa.gov/program.html"><B>Program 
+            Organization</B></A></P></TD></TR>
+        <TR align=middle>
+          <TD>
+            <P class=small align=center>&nbsp;</P></TD>
+          <TD>
+            <P class=small><A 
+            href="http://avsp.larc.nasa.gov/program_ai.html">AI</A></P></TD>
+          <TD>
+            <P class=small><A 
+            href="http://avsp.larc.nasa.gov/program_ai.html"></A><A 
+            href="http://avsp.larc.nasa.gov/program_s&amp;r.html"></A></P></TD></TR>
+        <TR align=middle>
+          <TD width=48>
+            <P class=small><A 
+            href="http://avsp.larc.nasa.gov/program_asmm.html">ASMM</A></P></TD>
+          <TD width=55>
+            <P class=small><A 
+            href="http://avsp.larc.nasa.gov/program_swap.html">SWAP</A></P></TD>
+          <TD width=46>
+            <P class=small><A 
+            href="http://avsp.larc.nasa.gov/program_saap.html">SAAP</A></P></TD></TR>
+        <TR align=middle>
+          <TD width=48>
+            <P class=small><A 
+            href="http://avsp.larc.nasa.gov/program_wx.html">WX</A></P></TD>
+          <TD width=55>
+            <P class=small><A 
+            href="http://avsp.larc.nasa.gov/program_am.html">AM</A></P></TD>
+          <TD width=46>
+            <P class=small><A 
+            href="http://avsp.larc.nasa.gov/program_svs.html">SVS</A></P></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width=23>
+      <P>|</P></TD>
+    <TD vAlign=top width=185>
+      <P class=center><A href="http://avsp.larc.nasa.gov/images.html"><B>Images 
+      and Documentation</B></A></P></TD>
+    <TD vAlign=top width=23>
+      <P>|</P></TD>
+    <TD vAlign=top width=113>
+      <P class=right><A href="http://avsp.larc.nasa.gov/links.html"><B>Links to 
+      Partners</B></A></P></TD></TR>
+  <TR>
+    <TD vAlign=top width=760 colSpan=11><IMG height=2 alt=" " 
+      src="Aviation Safety Program 2_files/BAR1.gif" width=754 border=0 
+      name=BAR> </TD></TR></TBODY></TABLE></CENTER>
+<CENTER><A name=nasa>&nbsp;</A> <SPAN style="DISPLAY: none"><A 
+href="http://avsp.larc.nasa.gov/program.html#top">Skip NASA Information and 
+Search Bar</A></SPAN> </CENTER>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width=760 
+summary="This table is for formatting purposes only." border=0>
+  <TBODY>
+  <TR align=middle>
+    <TD vAlign=top width=229>
+      <P><B><FONT face="Verdana, Arial, Helvetica, sans-serif">Web Site NASA 
+      Official and Curator:</FONT></B><FONT 
+      face="Verdana, Arial, Helvetica, sans-serif"> <A 
+      href="mailto:t.l.croom@larc.nasa.gov">Tamara L. Croom</A></FONT></P></TD>
+    <TD vAlign=top width=1 
+      background="Aviation Safety Program 2_files/bar2.gif">|</TD>
+    <TD vAlign=top width=310>
+      <FORM class=searchsmall name=seek 
+      action=http://192.42.75.20:8765/query.html method=get><INPUT type=hidden 
+      value=avsp NAMR="style"> <INPUT type=hidden value=0 name=rq> <INPUT 
+      type=hidden value=avsp name=col> <INPUT type=hidden name=qp> <INPUT 
+      type=hidden name=qs> <INPUT type=hidden name=qc> <INPUT type=hidden 
+      value=0 name=ws> <INPUT type=hidden value=0 name=qm> <INPUT type=hidden 
+      value=1 name=st> <INPUT type=hidden value=10 name=nh> <INPUT type=hidden 
+      value=1 name=lk> <INPUT type=hidden value=0 name=rf> <INPUT type=hidden 
+      name=oq> <INPUT type=hidden value=0 name=rq2> 
+      <FIELDSET><LABEL for=qt><FONT 
+      face="Verdana, Arial, Helvetica, sans-serif"><B>Search Aviation Safety 
+      Program Web Site</B></FONT></LABEL> <INPUT size=40 name=qt> 
+      <BR></FIELDSET> <INPUT type=image height=35 alt="Search Button" width=86 
+      src="Aviation Safety Program 2_files/SearchButton.gif" border=0 
+      name=search> </FORM></TD>
+    <TD vAlign=top width=1 
+      background="Aviation Safety Program 2_files/bar2.gif">|</TD>
+    <TD vAlign=top width=219>
+      <P><A href="http://www.larc.nasa.gov/privacy.html"><FONT 
+      face="Verdana, Arial, Helvetica, sans-serif">NASA Privacy 
+      Statement</FONT></A><FONT 
+      face="Verdana, Arial, Helvetica, sans-serif"><BR><B>Last Updated:</B> <!-- #BeginDate format:Am1 -->November 16, 2004<!-- #EndDate --> 
+      </FONT></P>
+      <P><A 
+      href="http://www.larc.nasa.gov/cgi-bin/disclaimer.cgi?http://www.adobe.com/acrobat/readstep2.html"><IMG 
+      height=31 alt="Link to get Acrobat Reader" 
+      src="Aviation Safety Program 2_files/acrobat.gif" width=88 border=0 
+      name=acrobat></A> <A 
+      href="http://www.larc.nasa.gov/cgi-bin/disclaimer.cgi?http://www.apple.com/quicktime/download/"><IMG 
+      height=31 alt="Link to get QuickTime Player" 
+      src="Aviation Safety Program 2_files/quicktime.gif" width=88 border=0 
+      name=quicktime></A></P></TD></TR></TBODY></TABLE></CENTER><!-- #EndTemplate --></BODY></HTML>

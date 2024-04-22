@@ -1,0 +1,23 @@
+CC     = "c:\program files\matlab\r2008b\sys\lcc\bin\lcc.exe"
+LD     = "c:\program files\matlab\r2008b\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "c:\program files\matlab\r2008b\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup
+LDFLAGS = -s -dll -L"c:\program files\matlab\r2008b\sys\lcc\lib"
+LIBFLAGS = 
+
+OBJECTS = \
+	"GTM_aerolib_sfun.obj"\
+	"c1_GTM_aerolib.obj"\
+	"c2_GTM_aerolib.obj"\
+
+INCLUDE_PATH= -I"c:\program files\matlab\r2008b\sys\lcc\include"  -I"c:\program files\matlab\r2008b\extern\include"  -I"c:\program files\matlab\r2008b\simulink\include"  -I"c:\program files\matlab\r2008b\stateflow\c\mex\include"  -I"c:\program files\matlab\r2008b\stateflow\c\debugger\include" 
+ 
+
+GTM_aerolib_sfun.lib : $(MAKEFILE) $(OBJECTS)
+	$(LIBCMD) $(LIBFLAGS) /OUT:GTM_aerolib_sfun.lib *.obj
+GTM_aerolib_sfun.obj :	"GTM_aerolib_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "GTM_aerolib_sfun.c"
+c1_GTM_aerolib.obj :	"c1_GTM_aerolib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_GTM_aerolib.c"
+c2_GTM_aerolib.obj :	"c2_GTM_aerolib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_GTM_aerolib.c"

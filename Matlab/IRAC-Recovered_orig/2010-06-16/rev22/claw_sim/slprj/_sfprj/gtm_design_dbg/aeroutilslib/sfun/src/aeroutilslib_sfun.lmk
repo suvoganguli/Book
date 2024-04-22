@@ -1,0 +1,26 @@
+CC     = "c:\program files\matlab\r2008b\sys\lcc\bin\lcc.exe"
+LD     = "c:\program files\matlab\r2008b\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "c:\program files\matlab\r2008b\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup
+LDFLAGS = -s -dll -L"c:\program files\matlab\r2008b\sys\lcc\lib"
+LIBFLAGS = 
+
+OBJECTS = \
+	"aeroutilslib_sfun.obj"\
+	"c1_aeroutilslib.obj"\
+	"c3_aeroutilslib.obj"\
+	"c6_aeroutilslib.obj"\
+
+INCLUDE_PATH= -I"c:\program files\matlab\r2008b\sys\lcc\include"  -I"c:\program files\matlab\r2008b\extern\include"  -I"c:\program files\matlab\r2008b\simulink\include"  -I"c:\program files\matlab\r2008b\stateflow\c\mex\include"  -I"c:\program files\matlab\r2008b\stateflow\c\debugger\include" 
+ 
+
+aeroutilslib_sfun.lib : $(MAKEFILE) $(OBJECTS)
+	$(LIBCMD) $(LIBFLAGS) /OUT:aeroutilslib_sfun.lib *.obj
+aeroutilslib_sfun.obj :	"aeroutilslib_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "aeroutilslib_sfun.c"
+c1_aeroutilslib.obj :	"c1_aeroutilslib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_aeroutilslib.c"
+c3_aeroutilslib.obj :	"c3_aeroutilslib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_aeroutilslib.c"
+c6_aeroutilslib.obj :	"c6_aeroutilslib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_aeroutilslib.c"

@@ -1,0 +1,20 @@
+CC     = "c:\program files\matlab\r2008b\sys\lcc\bin\lcc.exe"
+LD     = "c:\program files\matlab\r2008b\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "c:\program files\matlab\r2008b\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup
+LDFLAGS = -s -dll -L"c:\program files\matlab\r2008b\sys\lcc\lib"
+LIBFLAGS = 
+
+OBJECTS = \
+	"Polyval_lib_sfun.obj"\
+	"c6_Polyval_lib.obj"\
+
+INCLUDE_PATH= -I"c:\program files\matlab\r2008b\sys\lcc\include"  -I"c:\program files\matlab\r2008b\extern\include"  -I"c:\program files\matlab\r2008b\simulink\include"  -I"c:\program files\matlab\r2008b\stateflow\c\mex\include"  -I"c:\program files\matlab\r2008b\stateflow\c\debugger\include" 
+ 
+
+Polyval_lib_sfun.lib : $(MAKEFILE) $(OBJECTS)
+	$(LIBCMD) $(LIBFLAGS) /OUT:Polyval_lib_sfun.lib *.obj
+Polyval_lib_sfun.obj :	"Polyval_lib_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "Polyval_lib_sfun.c"
+c6_Polyval_lib.obj :	"c6_Polyval_lib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_Polyval_lib.c"
