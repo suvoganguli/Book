@@ -1,1 +1,0 @@
-bin1 = [-10:0.5:10];bin = repmat(bin1,1,41);ain1 = 0.5*ones(1,41);ain = [];for i = 1:41   ain = [ain -10*ones(1,41)+(i-1)*ain1];endtin1 = [0:0.02:0.8];tin = [];for i = 1:41   tin = [tin (i-1)*0.82*ones(1,41)+tin1];endtain = [tin' ain'];tbin = [tin' bin'];aplt = [-10:0.5:10];bplt = [-10:0.5:10];

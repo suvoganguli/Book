@@ -1,3 +1,0 @@
-https://www.youtube.com/watch?v=ltKjLOq38Nc&list=PL0IUz_pjFlJ2LsSTLY4I1yBhgGJeo9Baf&index=1
-
-https://github.com/MIDHUNTA30/MPC-MATLAB/blob/main/LMPC_1.m
