@@ -1,0 +1,39 @@
+CC     = "c:\program files\matlab\r2008b\sys\lcc\bin\lcc.exe"
+LD     = "c:\program files\matlab\r2008b\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "c:\program files\matlab\r2008b\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup
+LDFLAGS = -s -dll -L"c:\program files\matlab\r2008b\sys\lcc\lib"
+LIBFLAGS = 
+
+OBJECTS = \
+	"gtm_design_sfun.obj"\
+	"gtm_design_sfun_registry.obj"\
+	"lccstub.obj"\
+	"D:\Projects\IRAC - Local\users\suvo\TechWork\2010\2010-06-16\rev22\claw_sim\slprj\_sfprj\gtm_design\auxvars_lib\sfun\src\auxvars_lib_sfun.lib"\
+	"D:\Projects\IRAC - Local\users\suvo\TechWork\2010\2010-06-16\rev22\claw_sim\slprj\_sfprj\gtm_design\Polyval_lib\sfun\src\Polyval_lib_sfun.lib"\
+	"D:\Projects\IRAC - Local\users\suvo\TechWork\2010\2010-06-16\rev22\claw_sim\slprj\_sfprj\gtm_design\GTM_aerolib\sfun\src\GTM_aerolib_sfun.lib"\
+	"D:\Projects\IRAC - Local\users\suvo\TechWork\2010\2010-06-16\rev22\claw_sim\slprj\_sfprj\gtm_design\engine_T2_lib\sfun\src\engine_T2_lib_sfun.lib"\
+	"D:\Projects\IRAC - Local\users\suvo\TechWork\2010\2010-06-16\rev22\claw_sim\slprj\_sfprj\gtm_design\acparams_lib\sfun\src\acparams_lib_sfun.lib"\
+	"D:\Projects\IRAC - Local\users\suvo\TechWork\2010\2010-06-16\rev22\claw_sim\slprj\_sfprj\gtm_design\EulerDot_lib\sfun\src\EulerDot_lib_sfun.lib"\
+	"D:\Projects\IRAC - Local\users\suvo\TechWork\2010\2010-06-16\rev22\claw_sim\slprj\_sfprj\gtm_design\Form_Inertia_Matrix_lib\sfun\src\Form_Inertia_Matrix_lib_sfun.lib"\
+	"D:\Projects\IRAC - Local\users\suvo\TechWork\2010\2010-06-16\rev22\claw_sim\slprj\_sfprj\gtm_design\landinggear_lib\sfun\src\landinggear_lib_sfun.lib"\
+	"c:\program files\matlab\r2008b\sys\lcc\mex\lccdef.def"\
+	"c:\program files\matlab\r2008b\stateflow\c\debugger\lib\win32\sfc_debuglcc.lib"\
+	"c:\program files\matlab\r2008b\stateflow\c\mex\lib\win32\sfc_mexlcc.lib"\
+	"c:\program files\matlab\r2008b\extern\lib\win32\lcc\libmex.lib"\
+	"c:\program files\matlab\r2008b\extern\lib\win32\lcc\libmx.lib"\
+	"c:\program files\matlab\r2008b\extern\lib\win32\lcc\libfixedpoint.lib"\
+	"c:\program files\matlab\r2008b\extern\lib\win32\lcc\libut.lib"\
+	"c:\program files\matlab\r2008b\extern\lib\win32\lcc\libmwmathutil.lib"\
+
+INCLUDE_PATH= -I"c:\program files\matlab\r2008b\sys\lcc\include"  -I"c:\program files\matlab\r2008b\extern\include"  -I"c:\program files\matlab\r2008b\simulink\include"  -I"c:\program files\matlab\r2008b\stateflow\c\mex\include"  -I"c:\program files\matlab\r2008b\stateflow\c\debugger\include" 
+ 
+
+gtm_design_sfun.mexw32 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o gtm_design_sfun.mexw32 @gtm_design_sfun.lmko
+gtm_design_sfun.obj :	"gtm_design_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "gtm_design_sfun.c"
+gtm_design_sfun_registry.obj :	"gtm_design_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "gtm_design_sfun_registry.c"
+lccstub.obj :	"c:\program files\matlab\r2008b\sys\lcc\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2008b\sys\lcc\mex\lccstub.c"

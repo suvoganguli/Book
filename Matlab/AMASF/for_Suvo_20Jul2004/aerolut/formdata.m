@@ -1,0 +1,1 @@
+len = 41;CX = [];CY = [];CZ = [];CL_ = [];CD_ = [];for i = 1:len   CX = [CX XB((i-1)*len+1:i*len)];   CY = [CY YB((i-1)*len+1:i*len)];   CZ = [CZ ZB((i-1)*len+1:i*len)];   CL_ = [CL_ CL((i-1)*len+1:i*len)];   CD_ = [CD_ CD((i-1)*len+1:i*len)];end
