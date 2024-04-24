@@ -1,4 +1,4 @@
-function RTAU_OUT = RTAU(DP)
+function RTAU_OUT = RTAU_K(DP)
 % function used by PDOT
 
 % Author: Subhabrata Ganguli

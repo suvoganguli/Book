@@ -1,6 +1,7 @@
-function [P1_OUT] = PDOTINV(P3,PDOT_IN)
-% PDOT_OUT = rate of change of power
-
+function [P1_OUT] = PDOTINV_K(P3,PDOT_IN)
+% P1_OUT is power command for P3 (actual power) and PDOT_IN
+% (power rate)
+%
 % Author: Subhabrata Ganguli
 %
 % Ref: Stevens, Brian L.; Lewis, Frank L.; Johnson, Eric N..
@@ -10,6 +11,7 @@ function [P1_OUT] = PDOTINV(P3,PDOT_IN)
 
 % P3 = actual power
 % P1 = power command
+
 if isempty(P3)
     disp('empty')
 end

@@ -1,4 +1,4 @@
-% compare_lin_nonlin.m
+% plot_Kq_lin_nonlin.m
 
 % Author: Subhabrata Ganguli
 
@@ -35,16 +35,16 @@ sim('F16nonlin_K_q');
 
 figure(1); clf
 subplot(211)
-plot(t_l, r_l*180/pi, t_l, y_l*180/pi, ...
-     t_nl, y_nl*180/pi,'--')
+plot(t_l, r_l*180/pi, 'b', t_l, y_l*180/pi, 'r', ...
+     t_nl, y_nl*180/pi,'k--')
 legend('Step Input',...
     'Linear Plant', 'Nonlinear Plant')
 title('q (deg/sec) step response')
 ylabel('q (deg/sec)')
 grid on
 subplot(212)
-plot(t_l, u_l, ...
-     t_nl, (u_nl-U_trim(2)),'--')
+plot(t_l, u_l, 'r', ...
+     t_nl, (u_nl-U_trim(2)),'k--')
 legend('Linear Plant', 'Nonlinear Plant')
 title('de (deg) response')
 ylabel('de (deg)')
