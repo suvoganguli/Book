@@ -26,18 +26,17 @@ rc = 0; % deg/s
 
 sim('F16_K_pqr')
 
-figure(1); clf
+figure(1);
 subplot(321)
-hp = plot(t, yc(:,1)*180/pi, 'k:', ...
-    t, y(:,1)*180/pi, 'r-.');
-set(hp,'LineWidth',2);
+plot(t, yc(:,1)*180/pi, 'k:', t, y(:,1)*180/pi, 'r')
 hold on
+legend('pdes','pc','p');
 title('roll rate (deg/sec)')
 ylabel('p (deg/sec)')
 xlabel('t (sec)')
 
 subplot(322);
-plot(t, u(:,3), 'r', 'LineWidth', 2)
+plot(t, u(:,3), 'r')
 title('aileron (deg)')
 ylabel('\delta_a (deg)')
 xlabel('t (sec)')
@@ -49,15 +48,15 @@ rc = 0; % deg/s
 sim('F16_K_pqr')
 
 subplot(323)
-hp = plot(t, yc(:,2)*180/pi, 'k:', ...
-    t, y(:,2)*180/pi, 'r-.');
-set(hp,'LineWidth',2);
+p = plot(t, yc(:,2)*180/pi, 'LineWidth',2 ...
+    'k:', t, y(:,2)*180/pi, 'r', 'LineWidth', 2)
+legend('qdes','qc','q');
 title('pitch rate (deg/sec)')
 ylabel('q (deg/sec)')
 xlabel('t (sec)')
 
 subplot(324);
-plot(t, u(:,2), 'r', 'LineWidth', 2)
+plot(t, u(:,2), 'r')
 title('elevator (deg)')
 ylabel('\delta_e (deg)')
 xlabel('t (sec)')
@@ -69,15 +68,14 @@ rc = 10; % deg/s
 sim('F16_K_pqr')
 
 subplot(325)
-hp = plot(t, yc(:,3)*180/pi, 'k:', ...
-    t, y(:,3)*180/pi, 'r-.');
-set(hp,'LineWidth',2);
+plot(t, yc(:,3)*180/pi, 'k:', t, y(:,3)*180/pi, 'r')
+legend('rdes','rc','r');
 title('yaw rate (deg/sec)')
 ylabel('r (deg/sec)')
 xlabel('t (sec)')
 
 subplot(326);
-plot(t, u(:,4), 'r', 'LineWidth', 2)
+plot(t, u(:,4), 'r')
 title('rudder (deg)')
 ylabel('\delta_r (deg)')
 xlabel('t (sec)')
@@ -87,16 +85,13 @@ xlabel('t (sec)')
 
 sim('DesDyn.slx');
 
-figure(1);
+figure(1); clf
 subplot(321);
-hold on;
-plot(t,ydes,'g--', 'LineWidth', 2);
-legend('pc','p','pdes')
+plot(t,ydes,'b--');
+hold on
 subplot(323);
-hold on;
-plot(t, ydes,'g--', 'LineWidth', 2);
-legend('qc','q','qdes')
+plot(t, ydes,'b--');
+hold on
 subplot(325);
-hold on;
-plot(t,ydes,'g--', 'LineWidth', 2);
-legend('rc','r','rdes')
+plot(t,ydes,'b--');
+hold on
