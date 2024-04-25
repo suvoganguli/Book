@@ -13,6 +13,6 @@ CA_nl = C_nl*A;
 
 C_rate = C([7:9 13],:);
 
-K_rate = 8*ones(4,1);
+K_rate = 4*ones(4,1);
 fc_rate = 1/2*ones(4,1);
 fi_rate = 1/4*ones(4,1);

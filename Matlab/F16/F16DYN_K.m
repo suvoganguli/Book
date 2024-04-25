@@ -60,7 +60,7 @@ XD = zeros(13,1);
 [TFAC, TEMP, RHO, AMACH, QBAR, PS ] = ADC(VT, ALT);
 CPOW = TGEAR(THTL);
 
-XD(13) = PDOT(POW,CPOW);     
+XD(13) = PDOT_K(POW,CPOW);     
 T = THRUST(POW,ALT,AMACH);
 
 %% Look-up tables and component buildup

@@ -17,7 +17,7 @@ for P1 = 0:5:100
             %keyboard
         end
 
-        if ctr >= 300
+        if ctr >= 1
             keyboard
         end
 

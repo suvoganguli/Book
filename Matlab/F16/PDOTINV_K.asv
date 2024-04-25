@@ -15,9 +15,8 @@ if isempty(P3)
 end
 ctr = 1;
 k = 1;
-n = length(0:0.01:100);
+n = length([0:0.01:100])
 P1_OUT_vec = 100*ones(n,1);
-err = 100*ones(n,1);
 %err = inf*ones(100,1);
 sol = 0;
 
