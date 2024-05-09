@@ -50,16 +50,16 @@ set_param('gtm_design','InlineParams','off');
 AircraftType = get_param('gtm_design/Aircraft Model','BlockChoice');
 
 % Get index for Equations of Motion states
-% 12/31/2024
-%EOM =find(strcmp(StateNames,['gtm_design/Aircraft Model/' AircraftType '/EOM/Integrator'])==1);
-EOM =find(strcmp(StateNames,'gtm_design/Aircraft Model/EOM/Integrator')==1);
+% suvo
+%EOM =find(strcmp(StateName,['gtm_design/Aircraft Model/' AircraftType '/EOM/Integrator'])==1);
+EOM =find(strcmp(StateNames,['gtm_design/Aircraft Model/EOM/Integrator'])==1);
 
 % Bypass Engine Dynamics
 warning('off','Simulink:SL_SetParamLinkChangeWarn')
 
-% 12/31/2024
+%suvo
 %set_param(['gtm_design/Aircraft Model/' AircraftType '/Engines/' AircraftType '/Bypass'],'Value','1')
-set_param('gtm_design/Aircraft Model/Engines/Bypass','Value','1');
+set_param(['gtm_design/Aircraft Model/Engines/Bypass'],'Value','1')
 
 % Run sim for 0.1 seconds.
 % This initializes some states that are not set by trimgtm, e.g.
@@ -154,10 +154,9 @@ set_param('gtm_design','InlineParams',inlineflag);
 set_param('gtm_design','Dirty',dirtyflag);
 
 % reset Bypass Engine Dynamics
-% 12/31/2024
-% set_param(['gtm_design/Aircraft Model/' AircraftType '/Engines/' AircraftType '/Bypass'],'Value','0')
-set_param('gtm_design/Aircraft Model/Engines/Bypass','Value','0');
-
+% suvo
+%set_param(['gtm_design/Aircraft Model/' AircraftType '/Engines/' AircraftType '/Bypass'],'Value','0')
+set_param(['gtm_design/Aircraft Model/Engines/Bypass'],'Value','0')
 warning('on','Simulink:SL_SetParamLinkChangeWarn')
 
 
