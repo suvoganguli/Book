@@ -1,4 +1,5 @@
-[A,B,C,D] = linmod('PI_openloop');
+
+s[A,B,C,D] = linmod('PI_openloop');
 
 syscl = ss(A,B,C,D);
 
