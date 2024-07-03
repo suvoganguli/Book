@@ -1,12 +1,3 @@
-
-/*
- * Real-Time Workshop S-function Target for model claw_main_GV. 
- * This source file provides access to the generated S-function target
- * for other models.
- *
- * Created: Fri May 29 11:09:50 2009
- */
-
-#include "claw_main_GV_sfcn_rtw\claw_main_GV_sf.c"
-#include "claw_main_GV_sfcn_rtw\claw_main_GV_sf_data.c"
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:c88909064f18388cd95151ee5c99cff833e9d2e175453896fb5da7e4fe700c49
+size 326

@@ -1,0 +1,6 @@
+# Ignore all .slxc and .asv files
+*.slxc
+*.asv
+
+# Ignore all slprj directories
+slprj/
