@@ -14,7 +14,7 @@ grid on
 figure(2); clf
 plot(u_PID.Time, u_PID.Data, 'b-');
 hold on
-plot(u_lead.Time, u_lead.Data,'r');
+plot(u_lead.Time, u_lead.Data,'r--');
 xlabel('Time (sec)');
 ylabel('Controller Response')
 legend('u\_PID','u\_lead')

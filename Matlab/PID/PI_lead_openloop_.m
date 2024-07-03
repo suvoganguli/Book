@@ -7,7 +7,6 @@ margin(loop)
 
 S = allmargin(loop)
 
-
 setup_lead_controller
 
 [A2,B2,C2,D2] = linmod('PI_lead_openloop');

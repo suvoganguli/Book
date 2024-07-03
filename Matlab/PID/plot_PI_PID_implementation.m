@@ -8,3 +8,14 @@ xlabel('Time (sec)');
 ylabel('Closed Loop Response')
 legend('\alpha_D=1','\alpha_D=0')
 grid on
+
+[A,B,C,D] = linmod('PID_controller_implementation_RHZ');
+sys = ss(A,B,C,D);
+% Find the transmission zeros
+zeros = tzero(sys);
+
+% Display the zeros
+disp('The zeros of the transfer function are:');
+rifd(zeros);
+
+

@@ -1,0 +1,2075 @@
+Library {
+  Name			  "actuator_T2_lib"
+  Version		  6.6
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  off
+  Created		  "Fri Feb 20 15:53:55 2009"
+  Creator		  "amurch"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "amurch"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Feb 20 15:55:37 2009"
+  ModelVersionFormat	  "$LastChangedRevision: 1202 $"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelVerboseBuild	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "actuator_T2_lib"
+    Location		    [480, 93, 1016, 386]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "GTM_T2"
+      Ports		      [1, 1]
+      Position		      [225, 158, 360, 222]
+      BackgroundColor	      "cyan"
+      FontName		      "helvetica"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      System {
+	Name			"GTM_T2"
+	Location		[5, 85, 1104, 1133]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "cmds"
+	  Position		  [25, 933, 55, 947]
+	  BackgroundColor	  "lightBlue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Brake"
+	  Position		  [415, 1553, 450, 1577]
+	  BackgroundColor	  "cyan"
+	  UpperLimit		  "1.0"
+	  LowerLimit		  "0.0"
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector2"
+	  Ports			  [1, 21]
+	  Position		  [140, 55, 145, 1825]
+	  ShowName		  off
+	  OutputSignals		  "ELLOBC,ELLIBC,ELROBC,ELRIBC,AILLC,AILRC,RUD"
+"UPC,RUDLOC,SPLLIBC,SPLLOBC,SPLRIBC,SPLROBC,FLAPLIC,FLAPLOC,FLAPRIC,FLAPROC,GE"
+"ARC,BRAKEC,THROTLC,THROTRC,STEERC"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<ELLOBC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<ELLIBC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<ELROBC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<ELRIBC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "<AILLC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "<AILRC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    7
+	    Name		    "<RUDUPC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    8
+	    Name		    "<RUDLOC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    9
+	    Name		    "<SPLLIBC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    10
+	    Name		    "<SPLLOBC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    11
+	    Name		    "<SPLRIBC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    12
+	    Name		    "<SPLROBC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    13
+	    Name		    "<FLAPLIC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    14
+	    Name		    "<FLAPLOC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    15
+	    Name		    "<FLAPRIC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    16
+	    Name		    "<FLAPROC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    17
+	    Name		    "<GEARC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    18
+	    Name		    "<BRAKEC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    19
+	    Name		    "<THROTLC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    20
+	    Name		    "<THROTRC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    21
+	    Name		    "<STEERC>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ElevatorLIBServo"
+	  Ports			  [1, 1]
+	  Position		  [270, 143, 425, 207]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "20"
+	  POS_lo		  "-30"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ElevatorLOBServo"
+	  Ports			  [1, 1]
+	  Position		  [275, 58, 430, 122]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "20"
+	  POS_lo		  "-30"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ElevatorRIBServo"
+	  Ports			  [1, 1]
+	  Position		  [270, 313, 425, 377]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "20"
+	  POS_lo		  "-30"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ElevatorROBServo"
+	  Ports			  [1, 1]
+	  Position		  [275, 228, 430, 292]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "20"
+	  POS_lo		  "-30"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FlapLIBServo"
+	  Ports			  [1, 1]
+	  Position		  [260, 1078, 415, 1142]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "30"
+	  POS_lo		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FlapLOBServo"
+	  Ports			  [1, 1]
+	  Position		  [265, 1163, 420, 1227]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "30"
+	  POS_lo		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FlapRIBServo"
+	  Ports			  [1, 1]
+	  Position		  [270, 1248, 425, 1312]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "30"
+	  POS_lo		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FlapROBServo"
+	  Ports			  [1, 1]
+	  Position		  [265, 1333, 420, 1397]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "30"
+	  POS_lo		  "0"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  Position		  [655, 850, 740, 870]
+	  BackgroundColor	  "yellow"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  FontName		  "helvetica"
+	  GotoTag		  "SurfaceDeltas"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Gear"
+	  Position		  [335, 1513, 370, 1537]
+	  BackgroundColor	  "cyan"
+	  UpperLimit		  "1.0"
+	  LowerLimit		  "0.0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Gear1"
+	  Position		  [210, 1442, 305, 1458]
+	  BackgroundColor	  "cyan"
+	  ShowName		  off
+	  FontName		  "helvetica"
+	  Value			  "bias.stabilizer"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Label"
+	  Ports			  [1, 1]
+	  Position		  [925, 965, 955, 995]
+	  BackgroundColor	  "cyan"
+	  FontName		  "helvetica"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Label"
+	    Location		    [77, 118, 431, 967]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "I"
+	      Position		      [20, 408, 50, 422]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      Ports		      [22, 1]
+	      Position		      [245, 36, 250, 799]
+	      ShowName		      off
+	      Inputs		      "22"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 22]
+	      Position		      [100, 29, 105, 806]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "22"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"ELLOB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"ELLIB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"ELROB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"ELRIB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"AILL"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"AILR"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"RUDU"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"RUDL"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		9
+		Name			"SPLLIB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		10
+		Name			"SPLLOB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		11
+		Name			"SPLRIB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		12
+		Name			"SPLROB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		13
+		Name			"FLAPLIB"
+		PropagatedSignals	"FLAPLIB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		14
+		Name			"FLAPLOB"
+		PropagatedSignals	"FLAPLOB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		15
+		Name			"FLAPRIB"
+		PropagatedSignals	"FLAPRIB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		16
+		Name			"FLAPROB"
+		PropagatedSignals	"FLAPROB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		17
+		Name			"STAB"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		18
+		Name			"GEAR"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		19
+		Name			"BRAKE"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		20
+		Name			"THROTL"
+		PropagatedSignals	"THROTL"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		21
+		Name			"THROTR"
+		PropagatedSignals	"THROTR"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		22
+		Name			"STEER"
+		PropagatedSignals	"STEER"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "O"
+	      Position		      [285, 407, 315, 423]
+	      BackgroundColor	      "lightBlue"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "I"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      Points		      [0, -5]
+	      DstBlock		      "O"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "ELLIB"
+	      FontName		      "helvetica"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "ELROB"
+	      FontName		      "helvetica"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "ELRIB"
+	      FontName		      "helvetica"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "AILL"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      5
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "AILR"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      6
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "RUDU"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      7
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      7
+	    }
+	    Line {
+	      Name		      "RUDL"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      8
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      8
+	    }
+	    Line {
+	      Name		      "SPLLIB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      9
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      9
+	    }
+	    Line {
+	      Name		      "SPLLOB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      10
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      10
+	    }
+	    Line {
+	      Name		      "SPLRIB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      11
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      11
+	    }
+	    Line {
+	      Name		      "SPLROB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      12
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      12
+	    }
+	    Line {
+	      Name		      "FLAPLIB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      13
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      13
+	    }
+	    Line {
+	      Name		      "FLAPLOB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      14
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      14
+	    }
+	    Line {
+	      Name		      "FLAPRIB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      15
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      15
+	    }
+	    Line {
+	      Name		      "FLAPROB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      16
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      16
+	    }
+	    Line {
+	      Name		      "STAB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      17
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      17
+	    }
+	    Line {
+	      Name		      "GEAR"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      18
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      18
+	    }
+	    Line {
+	      Name		      "ELLOB"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "BRAKE"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      19
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      19
+	    }
+	    Line {
+	      Name		      "THROTL"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      20
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      20
+	    }
+	    Line {
+	      Name		      "THROTR"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      21
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      21
+	    }
+	    Line {
+	      Name		      "STEER"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      22
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      22
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "LeftAileronServo"
+	  Ports			  [1, 1]
+	  Position		  [265, 398, 420, 462]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "20.0"
+	  POS_lo		  "-20"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "LeftIBSpoilerServo"
+	  Ports			  [1, 1]
+	  Position		  [265, 738, 420, 802]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "15"
+	  POS_lo		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "LeftOBSpoilerServo"
+	  Ports			  [1, 1]
+	  Position		  [265, 823, 420, 887]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "45"
+	  POS_lo		  "0"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [22, 1]
+	  Position		  [570, 40, 575, 1925]
+	  ShowName		  off
+	  Inputs		  "22"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "RightAileronServo"
+	  Ports			  [1, 1]
+	  Position		  [265, 483, 420, 547]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "20.0"
+	  POS_lo		  "-20"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "RightIBSpoilerServo"
+	  Ports			  [1, 1]
+	  Position		  [260, 908, 415, 972]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "15"
+	  POS_lo		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "RightOBSpoilerServo"
+	  Ports			  [1, 1]
+	  Position		  [260, 993, 415, 1057]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "45"
+	  POS_lo		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "RudderLServo"
+	  Ports			  [1, 1]
+	  Position		  [260, 653, 415, 717]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "8.43"
+	  RL			  "300"
+	  POS_hi		  "30"
+	  POS_lo		  "-30.0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "RudderUServo"
+	  Ports			  [1, 1]
+	  Position		  [260, 568, 415, 632]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "8.43"
+	  RL			  "300"
+	  POS_hi		  "30"
+	  POS_lo		  "-30.0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "StabilizerServo"
+	  Ports			  [1, 1]
+	  Position		  [330, 1418, 485, 1482]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "4"
+	  POS_lo		  "-12"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "SteeringServo"
+	  Ports			  [1, 1]
+	  Position		  [280, 1848, 435, 1912]
+	  BackgroundColor	  "cyan"
+	  FontSize		  12
+	  SourceBlock		  "aeroutilslib/Servo Model"
+	  SourceType		  "Rate and Position Limited Servo"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  freq			  "10"
+	  RL			  "300"
+	  POS_hi		  "30"
+	  POS_lo		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [875, 970, 895, 990]
+	  BackgroundColor	  "cyan"
+	  ShowName		  off
+	  FontName		  "helvetica"
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  CollapseMode		  "All dimensions"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Surface\nAllocation"
+	  Ports			  [1, 1]
+	  Position		  [775, 842, 845, 878]
+	  BackgroundColor	  "cyan"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Surface\nAllocation"
+	    Location		    [255, 170, 1143, 990]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "I"
+	      Position		      [15, 318, 45, 332]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 9]
+	      Position		      [75, 198, 80, 582]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "9"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"dElevator"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"dAileron"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"dRudder"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"dL_Spo"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"dR_Spo"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"dFlap"
+		PropagatedSignals	"dL_Spo"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"dStabilizer"
+		PropagatedSignals	"dR_Spo"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"dthrottleL"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		9
+		Name			"dthrottleR"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [225, 195, 270, 225]
+	      ShowName		      off
+	      Gain		      "-1"
+	      ParameterDataTypeMode   "Inherit via internal rule"
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"dL_Ail"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain2"
+	      Position		      [225, 235, 270, 265]
+	      ShowName		      off
+	      ParameterDataTypeMode   "Inherit via internal rule"
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"dR_Ail"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground1"
+	      Position		      [505, 720, 525, 740]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"dgear"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground2"
+	      Position		      [505, 760, 525, 780]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"dbrake"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground5"
+	      Position		      [515, 880, 535, 900]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"dSteer"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [22, 1]
+	      Position		      [685, 37, 690, 903]
+	      ShowName		      off
+	      Inputs		      "22"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "O"
+	      Position		      [815, 457, 845, 473]
+	      BackgroundColor	      "lightBlue"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "I"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "dL_Ail"
+	      Labels		      [0, 0; -1, 1]
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "dR_Ail"
+	      Labels		      [0, 0; -1, 1]
+	      SrcBlock		      "Gain2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      Points		      [0, -5]
+	      DstBlock		      "O"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "dgear"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "Ground1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      18
+	    }
+	    Line {
+	      Name		      "dbrake"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "Ground2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      19
+	    }
+	    Line {
+	      Name		      "dSteer"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground5"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      22
+	    }
+	    Line {
+	      Name		      "dRudder"
+	      Labels		      [0, 1]
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      Points		      [515, 0]
+	      Branch {
+		Labels			[-1, 1]
+		Points			[0, -20]
+		DstBlock		"Mux"
+		DstPort			7
+	      }
+	      Branch {
+		Labels			[-1, 1]
+		Points			[0, 20]
+		DstBlock		"Mux"
+		DstPort			8
+	      }
+	    }
+	    Line {
+	      Name		      "dthrottleL"
+	      Labels		      [0, 1]
+	      SrcBlock		      "Demux"
+	      SrcPort		      8
+	      Points		      [285, 0; 0, 300]
+	      DstBlock		      "Mux"
+	      DstPort		      20
+	    }
+	    Line {
+	      Name		      "dthrottleR"
+	      Labels		      [0, 1]
+	      SrcBlock		      "Demux"
+	      SrcPort		      9
+	      Points		      [250, 0; 0, 300]
+	      DstBlock		      "Mux"
+	      DstPort		      21
+	    }
+	    Line {
+	      Name		      "dAileron"
+	      Labels		      [0, 1]
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [105, 0; 0, -60; 0, 0]
+	      Branch {
+		DstBlock		"Gain1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 0; 0, 40]
+		DstBlock		"Gain2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "dElevator"
+	      Labels		      [0, 1]
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [80, 0; 0, -120; 435, 0; 0, -60]
+	      Branch {
+		Labels			[1, 0]
+		DstBlock		"Mux"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 40]
+		Branch {
+		  Labels		  [1, 0]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, 35]
+		  Branch {
+		    Labels		    [2, 0]
+		    Points		    [0, 5]
+		    DstBlock		    "Mux"
+		    DstPort		    3
+		  }
+		  Branch {
+		    Labels		    [2, 0]
+		    Points		    [0, 45]
+		    DstBlock		    "Mux"
+		    DstPort		    4
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      Name		      "dL_Spo"
+	      Labels		      [0, 1]
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      Points		      [420, 0; 0, 40; 95, 0]
+	      Branch {
+		Labels			[-1, 1]
+		Points			[0, -20]
+		DstBlock		"Mux"
+		DstPort			9
+	      }
+	      Branch {
+		Labels			[-1, 1]
+		Points			[0, 20]
+		DstBlock		"Mux"
+		DstPort			10
+	      }
+	    }
+	    Line {
+	      Name		      "dR_Spo"
+	      Labels		      [0, 1]
+	      SrcBlock		      "Demux"
+	      SrcPort		      5
+	      Points		      [395, 0; 0, 85; 120, 0]
+	      Branch {
+		Labels			[-1, 1]
+		Points			[0, -25]
+		DstBlock		"Mux"
+		DstPort			11
+	      }
+	      Branch {
+		Labels			[-1, 1]
+		Points			[0, 15]
+		DstBlock		"Mux"
+		DstPort			12
+	      }
+	    }
+	    Line {
+	      Name		      "dFlap"
+	      Labels		      [0, 1]
+	      SrcBlock		      "Demux"
+	      SrcPort		      6
+	      Points		      [360, 0; 0, 140; 160, 0]
+	      Branch {
+		Labels			[1, 0]
+		DstBlock		"Mux"
+		DstPort			14
+	      }
+	      Branch {
+		Labels			[2, 0]
+		Points			[0, -40]
+		DstBlock		"Mux"
+		DstPort			13
+	      }
+	      Branch {
+		Points			[0, 40]
+		Branch {
+		  Labels		  [1, 0]
+		  DstBlock		  "Mux"
+		  DstPort		  15
+		}
+		Branch {
+		  Labels		  [2, 0]
+		  Points		  [0, 40]
+		  DstBlock		  "Mux"
+		  DstPort		  16
+		}
+	      }
+	    }
+	    Line {
+	      Name		      "dStabilizer"
+	      Labels		      [0, 1]
+	      SrcBlock		      "Demux"
+	      SrcPort		      7
+	      Points		      [320, 0; 0, 220]
+	      DstBlock		      "Mux"
+	      DstPort		      17
+	    }
+	    Annotation {
+	      Name		      "dthrottleR"
+	      Position		      [639, 842]
+	    }
+	    Annotation {
+	      Name		      "dthrottleL"
+	      Position		      [639, 802]
+	    }
+	    Annotation {
+	      Name		      "dStabilizer"
+	      Position		      [642, 680]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Surface Pos"
+	  Position		  [1000, 972, 1030, 988]
+	  BackgroundColor	  "lightBlue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Label"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Label"
+	  SrcPort		  1
+	  DstBlock		  "Surface Pos"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  DstBlock		  "Surface\nAllocation"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<FLAPLIC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  13
+	  DstBlock		  "FlapLIBServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<FLAPLOC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  14
+	  DstBlock		  "FlapLOBServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<FLAPRIC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  15
+	  DstBlock		  "FlapRIBServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<FLAPROC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  16
+	  DstBlock		  "FlapROBServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<GEARC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  17
+	  Points		  [0, 75]
+	  DstBlock		  "Gear"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<BRAKEC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  18
+	  Points		  [0, 30]
+	  DstBlock		  "Brake"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  Points		  [0, -5]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<ELLOBC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  1
+	  DstBlock		  "ElevatorLOBServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<ELLIBC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  2
+	  DstBlock		  "ElevatorLIBServo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ElevatorLOBServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ElevatorLIBServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<ELROBC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  3
+	  DstBlock		  "ElevatorROBServo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ElevatorROBServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "<ELRIBC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  4
+	  DstBlock		  "ElevatorRIBServo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ElevatorRIBServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "<AILLC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  5
+	  DstBlock		  "LeftAileronServo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "LeftAileronServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "<AILRC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  6
+	  DstBlock		  "RightAileronServo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "RightAileronServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "RudderUServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  7
+	}
+	Line {
+	  Name			  "<RUDUPC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  7
+	  DstBlock		  "RudderUServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<RUDLOC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  8
+	  DstBlock		  "RudderLServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<SPLLIBC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  9
+	  DstBlock		  "LeftIBSpoilerServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<SPLLOBC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  10
+	  DstBlock		  "LeftOBSpoilerServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<SPLRIBC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  11
+	  DstBlock		  "RightIBSpoilerServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<SPLROBC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  12
+	  DstBlock		  "RightOBSpoilerServo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "RudderLServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "LeftIBSpoilerServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "LeftOBSpoilerServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "RightIBSpoilerServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "RightOBSpoilerServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  12
+	}
+	Line {
+	  SrcBlock		  "FlapLIBServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  13
+	}
+	Line {
+	  SrcBlock		  "FlapLOBServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  14
+	}
+	Line {
+	  SrcBlock		  "FlapRIBServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  15
+	}
+	Line {
+	  SrcBlock		  "FlapROBServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  16
+	}
+	Line {
+	  SrcBlock		  "StabilizerServo"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  17
+	}
+	Line {
+	  SrcBlock		  "Gear"
+	  SrcPort		  1
+	  Points		  [180, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  18
+	}
+	Line {
+	  SrcBlock		  "Brake"
+	  SrcPort		  1
+	  Points		  [100, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  19
+	}
+	Line {
+	  SrcBlock		  "cmds"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Surface\nAllocation"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gear1"
+	  SrcPort		  1
+	  DstBlock		  "StabilizerServo"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<THROTLC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  19
+	  Points		  [390, 0; 0, 85]
+	  DstBlock		  "Mux"
+	  DstPort		  20
+	}
+	Line {
+	  Name			  "<THROTRC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  20
+	  Points		  [0, 70; 405, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  21
+	}
+	Line {
+	  Name			  "<STEERC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector2"
+	  SrcPort		  21
+	  Points		  [115, 0]
+	  DstBlock		  "SteeringServo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SteeringServo"
+	  SrcPort		  1
+	  Points		  [115, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  22
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Model Info"
+      Ports		      []
+      Position		      [135, 24, 413, 114]
+      ShowName		      off
+      SourceBlock	      "simulink/Model-Wide\nUtilities/Model Info"
+      SourceType	      "CMBlock"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      InitialBlockCM	      "None"
+      BlockCM		      "None"
+      Frame		      "on"
+      DisplayStringWithTags   "Actuator Library\n%<ModelVersion>\nLas modified"
+" by %<LastModifiedBy> on %<LastModificationDate>"
+      MaskDisplayString	      "Actuator Library\\n1.1\\nLas modified by amurch"
+" on 20-Feb-2009 15:54:35"
+      HorizontalTextAlignment "Center"
+      LeftAlignmentValue      "0.5"
+      SourceBlockDiagram      "actuator_T2_lib"
+      TagMaxNumber	      "20"
+    }
+  }
+}
